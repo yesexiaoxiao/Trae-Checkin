@@ -1,9 +1,0 @@
-      # refreshToken 每次续期都会产生新值、旧值作废，而 Actions 的工作目录
-      # 是一次性的。所以必须把续期后的 token 用缓存带到下一次运行。
-      - name: 恢复 token 缓存
-        uses: actions/cache@v5
-        with:
-          path: .trae_token_cache.json
-          key: trae-token-${{ github.run_id }}
-          restore-keys: |
-            trae-token-
